@@ -21,25 +21,14 @@
 - 条件判断：正确判断链路可用。
 - 注释：使用 `#` 添加说明；下一步继续区分注释与变量。
 
+## 2026-09-11（字符串格式化）
+
+- 学习主题：f-string。
+- 已完成：用 `{rx_power_dbm}` 输出变量当前存储的数值，并区分接收功率变量 `rx_power_dbm` 与接收天线增益 `rx_gain_db`。
+- 下一步：用 `for` 循环批量计算不同路径损耗下的接收功率。
+
 ## 当前练习代码摘要
 
 ```python
-# 输入发射功率
-tx_power_dbm = float(input("请输入发射功率："))
-
-# 输入发射天线增益
-tx_gain_db = float(input("请输入发射天线增益："))
-
-# 输入路径损耗
-path_loss_db = float(input("请输入路径损耗："))
-
-# 输入接收天线增益
-rx_gain_db = float(input("请输入接收天线增益："))
-
-rx_power_dbm = tx_power_dbm + tx_gain_db - path_loss_db + rx_gain_db
-
-if rx_power_dbm >= -80:
-    print("链路可用")
-else:
-    print("链路质量不足")
+print(f"接收功率是：{rx_power_dbm} dBm")
 ```
