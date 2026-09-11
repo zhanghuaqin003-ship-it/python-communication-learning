@@ -15,10 +15,28 @@
 - 复习通过：能判断输入 `-80` 时 `-80 >= -80` 为 `True`，输出“链路可用”。
 - 工具设置：关闭 VS Code 自动建议、触发字符补全、回车接受建议和参数提示。
 
+## 2026-09-11
+
+- 综合练习：加入发射天线增益和接收天线增益，计算接收功率 `-59 dBm`。
+- 条件判断：正确判断链路可用。
+- 注释：使用 `#` 添加说明；下一步继续区分注释与变量。
+
 ## 当前练习代码摘要
 
 ```python
-rx_power_dbm = float(input("请输入接收功率:"))
+# 输入发射功率
+tx_power_dbm = float(input("请输入发射功率："))
+
+# 输入发射天线增益
+tx_gain_db = float(input("请输入发射天线增益："))
+
+# 输入路径损耗
+path_loss_db = float(input("请输入路径损耗："))
+
+# 输入接收天线增益
+rx_gain_db = float(input("请输入接收天线增益："))
+
+rx_power_dbm = tx_power_dbm + tx_gain_db - path_loss_db + rx_gain_db
 
 if rx_power_dbm >= -80:
     print("链路可用")
